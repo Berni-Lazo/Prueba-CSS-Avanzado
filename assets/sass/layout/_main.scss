@@ -1,0 +1,167 @@
+.hero-section {
+  height: 830px;
+  margin: 0;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+
+  &__text {
+    padding-top: 2em;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 0;
+    margin-bottom: 0;
+
+    h1 {
+      font-size: $xxxxx-large;
+      font-weight: $bold;
+    }
+
+    p {
+      font-size: $x-large;
+      line-height: 2em;
+    }
+  }
+
+  img {
+    width: 100vw;
+  }
+}
+
+.progress {
+  text-align: left;
+  box-sizing: border-box;
+  padding: 0 2em;
+  width: 100vw;
+
+  &__title {
+    font-size: $xxxx-large;
+    text-align: center;
+  }
+
+  &__subtitle {
+    font-size: $x-large;
+  }
+
+  &__text {
+    font-size: $large;
+    line-height: 2em;
+  }
+
+  &__image {
+    animation: opacity 2s ease-out;
+  }
+}
+
+.price {
+  background-image: url('../images/bg-price.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 7em;
+  padding-bottom: 3em;
+
+  &__title {
+    text-align: center;
+    color: white;
+    font-size: $xxxx-large;
+  }
+}
+
+.card {
+  background-color: $white;
+  width: 350px;
+  padding: 2em;
+  margin: 3em;
+
+  &__title {
+    font-size: $xx-large;
+    font-weight: $regular;
+    margin-bottom: 0;
+  }
+
+  &__subtitle {
+    border-bottom: 1px solid $nickel;
+    font-size: $xxxxx-large;
+    margin-top: 0;
+    padding-bottom: .5em;
+  }
+
+  &__list {
+    font-size: $medium;
+    font-family: $open-sans;
+    line-height: 2em;
+    padding-bottom: 3em;
+    border-bottom: 1px solid $nickel;
+    height: 145px;
+
+  }
+
+  &__link {
+      text-decoration: none;
+      display: block;
+      background-color: $ball-blue;
+      color: $white;
+      text-align: center;
+      font-family: $raleway;
+      font-size: $large;
+      font-weight: $bold;
+      padding: 1em;
+
+      &:hover {
+        @extend .card__link;
+        background-color: $middle-blue;
+      }
+
+      &:focus {
+        @extend .card__link;
+        background-color: $gray;
+      }
+    }
+}
+
+@media (min-width: 992px) {
+  .hero-section {
+    background-image: url('../images/bg-hero.svg');
+    height: 830px;
+    margin: 0;
+
+    img {
+      display: none;
+    }
+
+    &__text {
+      padding: 4em;
+
+      h1 {
+        font-size: $xxxxx-large;
+        font-weight: $bold;
+      }
+
+      p {
+        font-size: $medium;
+        line-height: 2em;
+      }
+    }
+  }
+
+  .progress{
+    &__container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__description {
+      width: 500px;
+      padding: 3em;
+    }
+}
+
+  .price {
+    padding-top: 10em;
+  }
+
+  .cards {
+    display: flex;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,636 @@
+@charset "UTF-8";
+/*
+ * Patrón 7-1
+ *
+ * Esta es la estructura del patrón 7-1 utilizado en DesafíoLatam
+ * para la enseñanza del uso correcto de patrones dentro de CSS y
+ * también para la utilización de éste dentro de estructuras de 
+ * trabajo colaborativo.
+ *
+ * @author Cristóbal Domínguez <cristobald@me.com>
+ * @since 1.0
+ * @version 1.1
+ *
+ */
+/*
+ *
+ * La mayoría de los proyectos tienen una carpeta vendors/ que contiene
+ * todos los archivos CSS de librerías externas y frameworks – Normalize,
+ * Bootstrap, jQuery, jQueryUI, Flickity, Flexslider y así sucesivamente.
+ * Agregando estos en una carpeta aparte podría ser una buena forma de
+ * decir: “Hey, esto no es mío, no es mi código, no es mi responsabilidad”.
+ *
+ * @author Cristóbal Domínguez <cristobald@me.com>
+ * @since 1.0
+ * @version 1.1
+ *
+ */
+/*
+ *
+ * La carpeta abstracts/ reune todas las herramientas de SASS para el proyecto.
+ * Cada variable global, función, mixin o placeholder debería estar aquí dentro.
+ * 
+ * La regla de oro para esta carpeta es que no deberá imprimir ni una sola línea
+ * de código en el momento de la compilación del CSS. Nada como los helpers de Sass.
+ * 
+ * Cuando se trabaja en un proyecto muy grande con muchos archivos abstracts, podría
+ * ser más interesante agruparlos por tópicos en vez de por tipo. Un ejemplo sería
+ * crear las instancias typography (_typography.scss), theming (_theming.scss), etc.
+ * Cada archivo contendría todos los helpers relacionados a esa instancia: variables, 
+ * functions, mixins y placeholders. Hacerlo así podría hacer el código más sencillo de 
+ * de mantener, especialmente cuando los archivos empiezan a crecer mucho.
+ * 
+ * Nota:
+ * La carpeta abstracts/ podría llamarse utilities/ o helpers/, dependiendo de lo que
+ * se prefiera.
+ *
+ * @author Cristóbal Domínguez <cristobald@me.com>
+ * @since 1.0
+ *
+ */
+/*
+ *
+ * Este archivo contiene las referencias del código boilerplate de tu proyecto.
+ * Aquí podrás encontrar referencias al archivo _reset.scss, a las tipografías
+ * y probablemente algún otro archivo de estilos que defina de una forma estándard
+ * los estilos de elementos usados en HTML.
+ *
+ *
+ * Nota:
+ * Si tu proyecto usa muchas animaciones, deberías considerar agregar dentro de
+ * esta carpeta un archivo /_animations.scss que contenga las definiciones de los
+ * @keyframes de todas tus animaciones.
+ *
+ * @author Cristóbal Domínguez <cristobald@me.com>
+ * @since 1.0
+ *
+ */
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+}
+
+/*
+ *
+ * En sitios/aplicaciones grandes es usual tener distintos temas o 
+ * themes implementados. Hay diferentes caminos para lidiar con ese
+ * problema, sin embargo uno de los más sencillos, a mi parecer, sería
+ * tener cada theme dentro de su carpeta.
+ * 
+ * Nota:
+ * La creación de esta carpeta es muy específica a cada proyecto, 
+ * probablemente la mayoría de los sitio/aplicaciones no la necesitarán.
+ *
+ * @author Cristóbal Domínguez <cristobald@me.com>
+ * @since 1.0
+ *
+ */
+/*
+ *
+ * Esta carpeta contiene todo lo que hace relación con el sitio web o la aplicación.
+ * Aquí encontrarás los estilos para las partes principales del sitio (header, footer, 
+ * navigation, sidebar, etc), el sistema de grillas o incluso los estilos de los formularios
+ *
+ *
+ * Nota:
+ * La carpeta layout/ también podría ser llamada partials/, dependiendo de la 
+ * preferencia del desarrollador.
+ *
+ * @author Cristóbal Domínguez <cristobald@me.com>
+ * @since 1.0
+ *
+ */
+/* Grid */
+/* Container */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* Row */
+.row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 1rem;
+  grid-row-gap: 3rem;
+}
+
+@media (min-width: 1200px) {
+  .row {
+    grid-column-gap: 4rem;
+  }
+}
+/* Columns */
+.col-12 {
+  grid-column: span 12;
+}
+
+.col-11 {
+  grid-column: span 11;
+}
+
+.col-10 {
+  grid-column: span 10;
+}
+
+.col-9 {
+  grid-column: span 9;
+}
+
+.col-8 {
+  grid-column: span 8;
+}
+
+.col-7 {
+  grid-column: span 7;
+}
+
+.col-6 {
+  grid-column: span 6;
+}
+
+.col-5 {
+  grid-column: span 5;
+}
+
+.col-4 {
+  grid-column: span 4;
+}
+
+.col-3 {
+  grid-column: span 3;
+}
+
+.col-2 {
+  grid-column: span 2;
+}
+
+.col-1 {
+  grid-column: span 1;
+}
+
+@media (min-width: 768px) {
+  .col-sm-12 {
+    grid-column: span 12;
+  }
+
+  .col-sm-11 {
+    grid-column: span 11;
+  }
+
+  .col-sm-10 {
+    grid-column: span 10;
+  }
+
+  .col-sm-9 {
+    grid-column: span 9;
+  }
+
+  .col-sm-8 {
+    grid-column: span 8;
+  }
+
+  .col-sm-7 {
+    grid-column: span 7;
+  }
+
+  .col-sm-6 {
+    grid-column: span 6;
+  }
+
+  .col-sm-5 {
+    grid-column: span 5;
+  }
+
+  .col-sm-4 {
+    grid-column: span 4;
+  }
+
+  .col-sm-3 {
+    grid-column: span 3;
+  }
+
+  .col-sm-2 {
+    grid-column: span 2;
+  }
+
+  .col-sm-1 {
+    grid-column: span 1;
+  }
+}
+@media (min-width: 992px) {
+  .col-md-12 {
+    grid-column: span 12;
+  }
+
+  .col-md-11 {
+    grid-column: span 11;
+  }
+
+  .col-md-10 {
+    grid-column: span 10;
+  }
+
+  .col-md-9 {
+    grid-column: span 9;
+  }
+
+  .col-md-8 {
+    grid-column: span 8;
+  }
+
+  .col-md-7 {
+    grid-column: span 7;
+  }
+
+  .col-md-6 {
+    grid-column: span 6;
+  }
+
+  .col-md-5 {
+    grid-column: span 5;
+  }
+
+  .col-md-4 {
+    grid-column: span 4;
+  }
+
+  .col-md-3 {
+    grid-column: span 3;
+  }
+
+  .col-md-2 {
+    grid-column: span 2;
+  }
+
+  .col-md-1 {
+    grid-column: span 1;
+  }
+}
+@media (min-width: 1200px) {
+  .col-lg-12 {
+    grid-column: span 12;
+  }
+
+  .col-lg-11 {
+    grid-column: span 11;
+  }
+
+  .col-lg-10 {
+    grid-column: span 10;
+  }
+
+  .col-lg-9 {
+    grid-column: span 9;
+  }
+
+  .col-lg-8 {
+    grid-column: span 8;
+  }
+
+  .col-lg-7 {
+    grid-column: span 7;
+  }
+
+  .col-lg-6 {
+    grid-column: span 6;
+  }
+
+  .col-lg-5 {
+    grid-column: span 5;
+  }
+
+  .col-lg-4 {
+    grid-column: span 4;
+  }
+
+  .col-lg-3 {
+    grid-column: span 3;
+  }
+
+  .col-lg-2 {
+    grid-column: span 2;
+  }
+
+  .col-lg-1 {
+    grid-column: span 1;
+  }
+}
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  height: 7em;
+}
+.header .fas {
+  font-size: 1.5em;
+}
+.header__logo {
+  color: #221D23;
+}
+.header__buttons {
+  display: none;
+}
+
+.collapsible {
+  text-align: right;
+}
+.collapsible label {
+  display: block;
+  padding-top: 1em;
+  padding-right: 1.5em;
+  font-size: 1.8rem;
+}
+
+#menu-btn {
+  display: none;
+}
+
+input:checked ~ .header__menu {
+  max-height: 150%;
+}
+
+.header__menu {
+  max-height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.menu {
+  margin: 1.5em;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #fff;
+}
+.menu a {
+  display: block;
+  text-align: left;
+  padding: 0.5em;
+  text-decoration: none;
+  font-family: "Raleway", sans-serif;
+  color: #333745;
+}
+.menu a:hover {
+  color: #8F9199;
+}
+
+@media (min-width: 992px) {
+  .collapsible label {
+    display: none;
+  }
+
+  .header__menu {
+    max-height: 100%;
+    padding: 0.5em 3em 0.5em 0;
+    overflow: visible;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: flex-end;
+    margin: inherit;
+    padding: inherit;
+  }
+  .menu__item a {
+    padding: 0.5em 1em;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .header__buttons {
+    display: inline;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+  }
+  .header__button {
+    text-decoration: none;
+    color: #221D23;
+    padding: 0.5em 1em;
+  }
+  .header__button--blue {
+    text-decoration: none;
+    color: #FFF;
+    background-color: #2AB7CA;
+    padding: 0.5em 1em;
+  }
+}
+.footer {
+  background-color: #221D23;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+.footer__list {
+  display: flex;
+  list-style: none;
+}
+.footer__list li {
+  padding: 2em;
+}
+.footer__list a {
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  color: #FFF;
+}
+.footer__text {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  color: #FFF;
+  padding: 2em;
+}
+
+.hero-section {
+  height: 830px;
+  margin: 0;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+}
+.hero-section__text {
+  padding-top: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.hero-section__text h1 {
+  font-size: 50px;
+  font-weight: 700;
+}
+.hero-section__text p {
+  font-size: 30px;
+  line-height: 2em;
+}
+.hero-section img {
+  width: 100vw;
+}
+
+.progress {
+  text-align: left;
+  box-sizing: border-box;
+  padding: 0 2em;
+  width: 100vw;
+}
+.progress__title {
+  font-size: 45px;
+  text-align: center;
+}
+.progress__subtitle {
+  font-size: 30px;
+}
+.progress__text {
+  font-size: 20px;
+  line-height: 2em;
+}
+.progress__image {
+  animation: opacity 2s ease-out;
+}
+
+.price {
+  background-image: url("../images/bg-price.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 7em;
+  padding-bottom: 3em;
+}
+.price__title {
+  text-align: center;
+  color: white;
+  font-size: 45px;
+}
+
+.card {
+  background-color: #FFF;
+  width: 350px;
+  padding: 2em;
+  margin: 3em;
+}
+.card__title {
+  font-size: 35px;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+.card__subtitle {
+  border-bottom: 1px solid #726F73;
+  font-size: 50px;
+  margin-top: 0;
+  padding-bottom: 0.5em;
+}
+.card__list {
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  line-height: 2em;
+  padding-bottom: 3em;
+  border-bottom: 1px solid #726F73;
+  height: 145px;
+}
+.card a {
+  text-decoration: none;
+  display: block;
+  background-color: #2AB7CA;
+  color: #FFF;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 1em;
+}
+
+@media (min-width: 992px) {
+  .hero-section {
+    background-image: url("../images/bg-hero.svg");
+    height: 830px;
+    margin: 0;
+  }
+  .hero-section img {
+    display: none;
+  }
+  .hero-section__text {
+    padding: 4em;
+  }
+  .hero-section__text h1 {
+    font-size: 50px;
+    font-weight: 700;
+  }
+  .hero-section__text p {
+    font-size: 16px;
+    line-height: 2em;
+  }
+
+  .progress__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .progress__description {
+    width: 500px;
+    padding: 3em;
+  }
+
+  .price {
+    padding-top: 10em;
+  }
+
+  .cards {
+    display: flex;
+    justify-content: center;
+  }
+}
+/*
+ * 
+ * Esta carpeta fue creada para componentes o módulos pequeños como por ejemplo: 
+ * sliders, loaders, widgets, etc. A diferencia de la carpeta layout/ donde almacenaremos
+ * los componentes que definan el wireframe del sitio/aplicación, aquí encontraremos
+ * componentes que aportarán más contenido que una estructura visual.
+ * 
+ * Usualmente deberían haber muchos archivos en components/ debido a que los 
+ * sitios/aplicaciones se empezaron a crear en base a pequeños módulos de código.
+ * 
+ * Nota:
+ * Esta carpeta también se podría llamar modules/, dependiendo de cómo tu la prefieras.
+ *
+ * @author Cristóbal Domínguez <cristobald@me.com>
+ * @since 1.0
+ *
+ */
+/*
+ *
+ * Si prefieres estilos de páginas específicas, es mejor ponerlos en la carpeta pages/.
+ * Por cierto, es común tener estilos muy específicos para cada página, como por ejemplo:
+ * home, de ahí la necesidad de crear un archivo _home.scss dentro de pages/.
+ * 
+ * Nota:
+ * Dependiendo del proceso de tu desarrollo, estos archivos podrían ser cargados de forma
+ * paralela al archivo de estilos principal, evitando juntarlos con los del estilo principal.
+ * Sin embargo es una decisión de cada uno o de cada proyecto.
+ *
+ * @author Cristóbal Domínguez <cristobald@me.com>
+ * @since 1.0
+ *
+ */
+
+/*# sourceMappingURL=style.map */
